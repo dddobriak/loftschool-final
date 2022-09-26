@@ -18,7 +18,7 @@ class EnsureUserIsAdmin
     public function handle(Request $request, Closure $next)
     {
         if (
-            Auth::user()->is_admin ||
+            Auth::user()?->is_admin ||
             $request->route()->named('order.index') ||
             $request->route()->named('order.store') ||
             $request->route()->named('category.show') ||
