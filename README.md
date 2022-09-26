@@ -1,3 +1,16 @@
+## Установка проекта
+
+- Создать базу данных
+- Создать файл .env (из копии .env.example), указать доступы к базе данных
+- Для тестирования почты используется сервис [mailtrap](https://mailtrap.io/), в разделе mailtrap/inboxes на самой первой вкладке SMTP Settings выбрать Laravel 7+, скопировать настройки, вставить их в .env вместо MAIL_MAILER и др.
+- Запустить: composer install/npm install && npm run build
+- Для работы сервера: php artisan serve
+- Выполнить миграции вместе с фабрикой: php artisan migrate:fresh --seed (установятся таблицы, фабрика создаст демо-товары, категории и пользователей)
+- Посмотреть пользователей можно через тинкер, либо в бд непосредственно, у всех пользователей пароль password. Также реализована регистрация пользователя с галочкой под админа.
+
+### Окружение
+php 8.1.10, 10.9.2-MariaDB
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
